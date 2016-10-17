@@ -7,11 +7,12 @@ public class MuseOscServer {
 	static MuseOscServer museOscServer;
 	
 	OscP5 museServer;
-	static int recvPort = 5002;
+	static int recvPort = 5000;
 
 	public static void main(String [] args) {
 		museOscServer = new MuseOscServer();
 		museOscServer.museServer = new OscP5(museOscServer, recvPort);
+		System.out.println("Server is Started\n");
 			}
 	
 	void oscEvent(OscMessage msg) {
