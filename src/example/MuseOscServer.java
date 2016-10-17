@@ -16,8 +16,8 @@ public class MuseOscServer {
 			}
 	
 	void oscEvent(OscMessage msg) {
-		System.out.println("### got a message " + msg);
-		if (msg.checkAddrPattern("/muse/eeg")==true) {  
+		if (msg.checkAddrPattern("/muse/elements/alpha_absolute")==true) {  
+			System.out.println("### got a message " + msg);
 			for(int i = 0; i < 4; i++) {
 				System.out.print("EEG on channel " + i + ": " + msg.get(i).floatValue() + "\n"); 
 			}
