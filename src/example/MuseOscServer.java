@@ -7,7 +7,7 @@ public class MuseOscServer {
 	static MuseOscServer museOscServer;
 	
 	OscP5 museServer;
-	static int recvPort = 5000;
+	static int recvPort = 5002;
 
 	public static void main(String [] args) {
 		museOscServer = new MuseOscServer();
