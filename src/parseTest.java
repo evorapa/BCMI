@@ -12,31 +12,37 @@ public class parseTest {
 		parseTest p = new parseTest();
 		p.museServer = new OscP5(p, recPort);
 		System.out.println("Server Started");
-		p.museServer.plug(parser, "museCon", "/muse/elements/experimental/concentration");
-		p.museServer.plug(parser, "valid", "/muse/elements/blink");
-		p.museServer.plug(parser, "valid", "/muse/elements/jaw_clench");
-		p.museServer.plug(parser, "valid", "/muse/elements/is_good");
+		p.museServer.plug(p, "museCon", "/muse/elements/experimental/concentration");
+		p.museServer.plug(p, "valid", "/muse/elements/blink");
+		p.museServer.plug(p, "valid", "/muse/elements/jaw_clench");
+		p.museServer.plug(p, "valid", "/muse/elements/is_good");
 		
 	}
 	
 	public void museCon(float f){
+		System.out.println("PLUG");
 		System.out.println("Plug for museCon: " + f);
 	}
 	
 	public void valid(int b){
+		System.out.println("PLUGGED");
 		System.out.println("Plug for blink/jaw_clench: " + b);
 	}
 	
 	public void valid(int a, int b, int c, int d){
-		System.out.print("plug for is_good " + a + " " + b + " " + c + " " + d);
+		System.out.println("PLUGGED");
+		System.out.println("Plug for is_good: " + a + " " + b + " " + c + " " + d);
 	}
 	
 	void oscEvent(OscMessage msg) {
-		if (msg.checkAddrPattern("/muse/elements/experimental/concentration")==true) {  
+		//System.out.println(msg.isPlugged());
+		/*
+		if (msg.checkAddrPattern("/muse/elements/experimental/concentration")==true && !msg.isPlugged()) {  
 			this.museCon = msg.get(0).floatValue();
 			System.out.println("### got a message " + msg);
-			System.out.print("Concentration: " + msg.get(0).floatValue() + "\n"); 
+			System.out.print("Concentration: " + museCon + "\n"); 
 			
 		} 
+		*/
 	}
 }
