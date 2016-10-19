@@ -3,7 +3,7 @@ import oscP5.*;
 public class parseTest {
 	static int recPort = 5000;
 	int count = 0;
-	int limit = 5;
+	int limit;
 	float museCon;
 	float calcCon;
 	float alpha;
@@ -14,6 +14,16 @@ public class parseTest {
 	OscP5 museServer;
 	
 	static parseTest parser;
+	
+	parseTest(){
+		limit = 5;
+		history = new float[limit];
+	}
+	
+	parseTest(int limit){
+		this.limit = limit;
+		history = new float[limit];
+	}
 	
 	public void setup(){
 		museServer = new OscP5(this, recPort);
