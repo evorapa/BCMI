@@ -32,7 +32,7 @@ public class AudioPlayerExampleIntAcc implements LineListener {
      * Play a given audio file.
      * @param audioFilePath Path of the audio file.
      */
-    void play(String audioFilePath) {
+    public void play(String audioFilePath, int speed) {
         File audioFile = new File(audioFilePath);
  
         try {
@@ -42,7 +42,7 @@ public class AudioPlayerExampleIntAcc implements LineListener {
  
             DataLine.Info info = new DataLine.Info(Clip.class, format);
 
-            int playBackSpeed = 1;
+            int playBackSpeed = speed;
 
             int frameSize = format.getFrameSize();
 
@@ -87,7 +87,7 @@ public class AudioPlayerExampleIntAcc implements LineListener {
             }
              
             audioClip.close();
-             
+            
         } catch (UnsupportedAudioFileException ex) {
             System.out.println("The specified audio file is not supported.");
             ex.printStackTrace();
@@ -121,7 +121,7 @@ public class AudioPlayerExampleIntAcc implements LineListener {
     public static void main(String[] args) {
         String audioFilePath = "D:/C Drive 2, C Drive's Revenge/Fun/Torrents/Music/Run The Jewels/RTJ2/11 Angel Duster.wav";
         AudioPlayerExampleIntAcc player = new AudioPlayerExampleIntAcc();
-        player.play(audioFilePath);
+        player.play(audioFilePath, 1);
     }
  
 }

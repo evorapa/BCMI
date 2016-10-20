@@ -13,9 +13,9 @@ public class MuseOscServer {
 		museOscServer = new MuseOscServer();
 		museOscServer.museServer = new OscP5(museOscServer, recvPort);
 		System.out.println("Server is Started\n");
-		 String audioFilePath = "D:/C Drive 2, C Drive's Revenge/Fun/Torrents/Music/Run The Jewels/RTJ2/11 Angel Duster.wav";
+		 String audioFilePath = "C:/Users/zrgam_000/Downloads/02_-_No_Problem_feat_Lil_Wayne_and_2_Chainz.wav";
 	     AudioPlayerExampleIntAcc player = new AudioPlayerExampleIntAcc();
-	     player.play(audioFilePath);
+	     player.play(audioFilePath, 1);
 			}
 	
 	void oscEvent(OscMessage msg) {
