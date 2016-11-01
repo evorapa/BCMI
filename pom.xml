@@ -3,4 +3,7 @@
   <groupId>com.bcmi.app</groupId>
   <artifactId>muse-ic</artifactId>
   <version>1</version>
+  <dependencies>
+  	oscP5.jar
+  </dependencies>
 </project>
