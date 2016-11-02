@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* parseTest
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* parseTest.java
